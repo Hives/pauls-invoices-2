@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.egg-info/
+
+# real config, templates and generated PDFs stay local
+/config/*
+!/config/*.example.toml
+!/config/clients/
+/config/clients/*
+!/config/clients/*.example.toml
+/templates/*
+!/templates/example_template.py
+/pdfs/

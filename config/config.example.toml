@@ -1,0 +1,18 @@
+# Copy to config.toml and edit.
+output_dir = "pdfs"        # relative to the repo root, or an absolute path
+invoice_prefix = "INV-"
+
+[sender]
+name = "Your Name"
+address = """
+1 Example Street
+London
+AB1 2CD"""
+phone = "07000 000000"
+email = "you@example.com"
+
+[payment]
+details = """
+Account name: Your Name
+Sort code: 00-00-00
+Account number: 00000000"""

@@ -1,0 +1,3 @@
+# Copy to next_invoice_number.toml. This is the number the NEXT invoice will get.
+# Move it back to reissue a number after a mistake.
+next_invoice_number = 1

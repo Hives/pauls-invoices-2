@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Run a client template: ./invoice acme  (or ./invoice templates/acme.py)
+set -euo pipefail
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [ $# -ne 1 ]; then
+  echo "Usage: ./invoice <client>" >&2
+  echo "Available templates:" >&2
+  for f in "$root"/templates/*.py; do
+    n="$(basename "$f" .py)"
+    [ "$n" = "example_template" ] || echo "  $n" >&2
+  done
+  exit 1
+fi
+
+name="$(basename "$1" .py)"
+template="$root/templates/$name.py"
+if [ ! -f "$template" ]; then
+  echo "No template: $template" >&2
+  exit 1
+fi
+if [ ! -x "$root/.venv/bin/python" ]; then
+  echo "Missing .venv - see README.md setup" >&2
+  exit 1
+fi
+
+exec "$root/.venv/bin/python" "$template"

@@ -1,0 +1,6 @@
+# Copy to <client>.toml (e.g. acme.toml) and edit.
+name = "Acme Ltd"
+address = """
+10 Client Road
+Manchester
+M1 1AA"""
